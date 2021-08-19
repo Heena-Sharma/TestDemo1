@@ -13,7 +13,10 @@ single list of data which is showing using recycler view.
 This project uses the Gradle build system. To build this project
 * Summary of set up
 - this project setup with MVVM, Data binding, Live Data, Used json data from assests folder named with "testdata.json"
-* Dependencies-
+
+
+
+### Dependencies###-
 - [AppCompat] - Degrade gracefully on older versions of Android.
   'androidx.appcompat:appcompat:1.3.1'
 - [Android KTX]  - Write more concise, idiomatic Kotlin code.
@@ -44,6 +47,8 @@ glideVersion used-  '4.10.0'
 "com.google.dagger:hilt-android:2.38.1"
 - [sdp-android]- used for dimensions(for different screen sizes)
 'com.intuit.sdp:sdp-android:1.0.6'
+
+
 
 ### Screenshots###
 
