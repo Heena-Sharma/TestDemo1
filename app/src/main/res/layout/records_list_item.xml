@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="records"
+            type="com.ns.assignment.data.record.Records" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_150sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:imageFromUrl="@{records.mainImageURL}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_500"
+            android:paddingTop="@dimen/_42sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/image">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/btn_pledge"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_funded"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/rupee"
+                            android:text="@{records.collectedValue}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:text="Funded"
+                            android:textAllCaps="true"
+                            android:textColor="@color/gray_white"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_goals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/rupee"
+                            android:text="@{records.totalValue}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal"  />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:text="@string/goals"
+                            android:textAllCaps="true"
+                            android:textColor="@color/gray_white"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_endsin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{records.endDate}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal"  />
+
+                        <TextView
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:text="@string/ends_in"
+                            android:textAllCaps="true"
+                            android:textColor="@color/gray_white"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/btn_pledge"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/button_bg"
+                android:text="Pledge"
+                android:textColor="@color/teal_500"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/container3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+
+            app:flow_verticalAlign="bottom"
+            app:flow_verticalGap="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/container2"
+            app:layout_constraintTop_toBottomOf="@+id/image">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:layout_constraintEnd_toStartOf="@id/category_container"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{records.title}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/img_wishlist"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        android:text="@{records.shortDescription}"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <ImageView
+                        android:id="@+id/img_wishlist"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:paddingRight="@dimen/_3sdp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/heart_selector" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:id="@+id/category_container"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/bg_image"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:outlineProvider="background"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/circle" />
+
+                <TextView
+                    android:id="@+id/category_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="100%"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
