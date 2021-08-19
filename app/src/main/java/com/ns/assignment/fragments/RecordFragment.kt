@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ns.assignment.R
 import com.ns.assignment.adapters.RecordListAdapter
 import com.ns.assignment.baseclass.MainActivity
 import com.ns.assignment.databinding.FragmentRecordsBinding
@@ -54,8 +55,7 @@ class RecordFragment : Fragment() {
     }
     private fun subscribeUi(adapter: RecordListAdapter) {
         viewModel.records.observe(viewLifecycleOwner) { records ->
-            Log.e("Result=", records.toString())
-           adapter.submitList(records)
+            adapter.submitList(records)
 
         }
 
@@ -63,6 +63,7 @@ class RecordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {

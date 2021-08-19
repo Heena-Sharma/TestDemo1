@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/RecordFragment"
         android:name="com.ns.assignment.fragments.RecordFragment"
-        android:label="@string/record_fragment_label"
+        android:label="@string/recordList"
         tools:layout="@layout/fragment_records">
 
     </fragment>

@@ -12,4 +12,5 @@
     <string name="rupees">₹</string>
     <string name="goals">Goals</string>
     <string name="ends_in">Ends In</string>
+    <string name="recordList">Record List</string>
 </resources>
